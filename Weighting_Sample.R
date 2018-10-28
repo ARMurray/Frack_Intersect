@@ -28,7 +28,7 @@ blk_pts <- st_centroid(blocks)
 # each intersecting census block that are likely to also be within the 1 km buffer
 p1 <- ggplot()+
   geom_sf(data = blocks)+
-  geom_sf(data = buf, fill = NA, color = 'black', size = 2)+
+  geom_sf(data = buf, fill = NA, color = 'black')+
   geom_sf(data = pads, size = 5, pch = 17, col = 'red')+
   geom_sf_label(data = blk_pts, mapping = aes(label = as.integer(Hybd_Blk_W)))+
   xlab("")+ylab("")
@@ -63,7 +63,7 @@ pts$Y <- coords['Y']
 # Create a plot showing the estimated number of wells within each part of each 
 # block that intersects the buffer area around the oil/gas well  
 p2 <- ggplot()+
-  geom_sf(data = intersects, size = 1.5)+
+  geom_sf(data = intersects)+
   geom_sf(data = row, size = 5, pch = 17, col = 'red')+
   geom_sf_label(data = pts, mapping = aes(label=as.integer(wells)))+
   xlab("")+ylab("")
