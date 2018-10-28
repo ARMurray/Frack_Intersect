@@ -69,3 +69,5 @@ p2 <- ggplot()+
   xlab("")+ylab("")
   
 p2
+
+results <- merge(pads,outdf)
